@@ -1,19 +1,44 @@
 export const columnsDataDevelopment = [
   {
-    Header: "NAME",
-    accessor: "name",
+    Header: "ID",
+    accessor: "id",
+  },
+
+  {
+    Header: "TYPE",
+    accessor: "type",
+  },
+ 
+  {
+    Header: "BOOKING DATE",
+    accessor: "bdate",
+  },
+  {
+    Header: "JOURNEY DATE",
+    accessor: "jdate",
+  },
+  {
+    Header: "STATUS",
+    accessor: "status",
   },
   {
     Header: "TECH",
     accessor: "tech",
   },
+
   {
-    Header: "DATE",
-    accessor: "date",
+    Header: "TRAVELLER",
+    accessor: "traveller",
   },
+
   {
-    Header: "PROGRESS",
-    accessor: "progress",
+    Header: "AMOUNT",
+    accessor: "amount",
+  },
+
+  {
+    Header: "PAYMENT TYPE",
+    accessor: "payment type",
   },
 ];
 
@@ -69,7 +94,7 @@ export const columnsDataComplex = [
     accessor: "date",
   },
   {
-    Header: "PROGRESS",
-    accessor: "progress",
+    Header: "ACTION",
+    accessor: "action",
   },
 ];

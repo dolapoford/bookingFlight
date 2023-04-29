@@ -23,7 +23,7 @@ export default function DailyTraffic(props) {
     <Card align='center' direction='column' w='100%' {...rest}>
       <Flex justify='space-between' align='start' px='10px' pt='5px'>
         <Flex flexDirection='column' align='start' me='20px'>
-          <Flex w='100%'>
+          <Flex >
             <Text
               me='auto'
               color='secondaryGray.600'

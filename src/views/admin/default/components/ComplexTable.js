@@ -24,7 +24,7 @@ import Card from "components/card/Card";
 import Menu from "components/menu/MainMenu";
 
 // Assets
-import { MdCheckCircle, MdCancel, MdOutlineError } from "react-icons/md";
+import { MdCheckCircle, MdCancel, MdOutlineError,MdOutlineEditCalendar } from "react-icons/md";
 export default function ColumnsTable(props) {
   const { columnsData, tableData } = props;
 
@@ -65,7 +65,7 @@ export default function ColumnsTable(props) {
           fontSize='22px'
           fontWeight='700'
           lineHeight='100%'>
-          Complex Table
+        Recent Booking
         </Text>
         <Menu />
       </Flex>
@@ -112,22 +112,26 @@ export default function ColumnsTable(props) {
                           h='24px'
                           me='5px'
                           color={
-                            cell.value === "Approved"
+                            cell.value === "Completed"
                               ? "green.500"
-                              : cell.value === "Disable"
+                              : cell.value === "Cancel"
                               ? "red.500"
-                              : cell.value === "Error"
+                              : cell.value === "Miss"
                               ? "orange.500"
-                              : null
+                              : cell.value === "Reschedule"
+                              ?"#D3E60B"
+                              :null
                           }
                           as={
-                            cell.value === "Approved"
+                            cell.value === "Completed"
                               ? MdCheckCircle
-                              : cell.value === "Disable"
+                              : cell.value === "Cancel"
                               ? MdCancel
-                              : cell.value === "Error"
+                              : cell.value === "Miss"
                               ? MdOutlineError
-                              : null
+                              : cell.value === "Reschedule"
+                              ?MdOutlineEditCalendar
+                              :null
                           }
                         />
                         <Text color={textColor} fontSize='sm' fontWeight='700'>

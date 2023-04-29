@@ -5,6 +5,7 @@ import {
   Table,
   Tbody,
   Td,
+  Icon,
   Text,
   Th,
   Thead,
@@ -14,6 +15,7 @@ import {
 // Custom components
 import Card from "components/card/Card";
 import { AndroidLogo, AppleLogo, WindowsLogo } from "components/icons/Icons";
+import { MdCheckCircle, MdCancel, MdOutlineError,MdOutlineEditCalendar } from "react-icons/md";
 import Menu from "components/menu/MainMenu";
 import React, { useMemo } from "react";
 import {
@@ -64,7 +66,7 @@ export default function DevelopmentTable(props) {
           fontSize='22px'
           fontWeight='700'
           lineHeight='100%'>
-          Development Table
+         Booking List
         </Text>
         <Menu />
       </Flex>
@@ -97,13 +99,110 @@ export default function DevelopmentTable(props) {
               <Tr {...row.getRowProps()} key={index}>
                 {row.cells.map((cell, index) => {
                   let data = "";
-                  if (cell.column.Header === "NAME") {
+                  if (cell.column.Header === "ID") {
                     data = (
                       <Text color={textColor} fontSize='sm' fontWeight='700'>
                         {cell.value}
                       </Text>
                     );
-                  } else if (cell.column.Header === "TECH") {
+                  } else if (cell.column.Header === "TYPE") {
+                    data = (
+                      <Text color={textColor} fontSize='sm' fontWeight='700'>
+                        {cell.value}
+                      </Text>
+                    );
+                  } 
+                  else if (cell.column.Header === "BOOKING DATE") {
+                    data = (
+                      <Text color={textColor} fontSize='sm' fontWeight='700'>
+                        {cell.value}
+                      </Text>
+                    );
+                  }
+                  else if (cell.column.Header === "JOURNEY DATE") {
+                    data = (
+                      <Text color={textColor} fontSize='sm' fontWeight='700'>
+                        {cell.value}
+                      </Text>
+                    );
+                  } 
+                  else if (cell.column.Header === "STATUS") {
+                    data = (
+                      <Flex align='center'>
+                         <Icon
+                          w='24px'
+                          h='24px'
+                          me='5px'
+                          color={
+                            cell.value === "Completed"
+                              ? "green.500"
+                              : cell.value === "Cancel"
+                              ? "red.500"
+                              : cell.value === "Miss"
+                              ? "orange.500"
+                              : cell.value === "Reschedule"
+                              ?"#D3E60B"
+                              :null
+                          }
+                          as={
+                            cell.value === "Completed"
+                              ? MdCheckCircle
+                              : cell.value === "Cancel"
+                              ? MdCancel
+                              : cell.value === "Miss"
+                              ? MdOutlineError
+                              : cell.value === "Reschedule"
+                              ?MdOutlineEditCalendar
+                              :null
+                          }
+                        />
+                        <Text color={textColor} fontSize='sm' fontWeight='700'>
+                          {cell.value}
+                        </Text>
+                      </Flex>
+                    );
+                  }
+                  else if (cell.column.Header === "TRAVELLER") {
+                    data = (
+                      <Text color={textColor} fontSize='sm' fontWeight='700'>
+                        {cell.value}
+                      </Text>
+                    );
+                  }
+                  else if (cell.column.Header === "AMOUNT") {
+                    data = (
+                      <Text color={textColor} fontSize='sm' fontWeight='700'>
+                        {cell.value}
+                      </Text>
+                    );
+                  }
+                  else if (cell.column.Header === "PAYMENT TYPE") {
+                    data = (
+                      <Text color={textColor} fontSize='sm' fontWeight='700'>
+                        {cell.value}
+                      </Text>
+                    );
+                  }else if (cell.column.Header === "PROGRESS") {
+                    data = (
+                      <Flex align='center'>
+                        <Text
+                          me='10px'
+                          color={textColor}
+                          fontSize='sm'
+                          fontWeight='700'>
+                          {cell.value}%
+                        </Text>
+                        <Progress
+                          variant='table'
+                          colorScheme='brandScheme'
+                          h='8px'
+                          w='63px'
+                          value={cell.value}
+                        />
+                      </Flex>
+                    );
+                  }
+                  else if (cell.column.Header === "TECH") {
                     data = (
                       <Flex align='center'>
                         {cell.value.map((item, key) => {
@@ -140,32 +239,7 @@ export default function DevelopmentTable(props) {
                         })}
                       </Flex>
                     );
-                  } else if (cell.column.Header === "DATE") {
-                    data = (
-                      <Text color={textColor} fontSize='sm' fontWeight='700'>
-                        {cell.value}
-                      </Text>
-                    );
-                  } else if (cell.column.Header === "PROGRESS") {
-                    data = (
-                      <Flex align='center'>
-                        <Text
-                          me='10px'
-                          color={textColor}
-                          fontSize='sm'
-                          fontWeight='700'>
-                          {cell.value}%
-                        </Text>
-                        <Progress
-                          variant='table'
-                          colorScheme='brandScheme'
-                          h='8px'
-                          w='63px'
-                          value={cell.value}
-                        />
-                      </Flex>
-                    );
-                  }
+                  } 
                   return (
                     <Td
                       {...cell.getCellProps()}

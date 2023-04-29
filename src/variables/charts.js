@@ -16,7 +16,7 @@ export const barChartOptionsDailyTraffic = {
   tooltip: {
     style: {
       fontSize: "12px",
-      fontFamily: undefined,
+      fontFamily: undefined, 
     },
     onDatasetHover: {
       style: {
@@ -209,10 +209,10 @@ export const barChartOptionsConsumption = {
 };
 
 export const pieChartOptions = {
-  labels: ["Your files", "System", "Empty"],
-  colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+  labels: ["Completed", "Miss", "Reschedule","Cancel"],
+  colors: ["#0be646", "#fc0335", "#d3e60b","#e60b3b"],
   chart: {
-    width: "50px",
+    width: "200px",
   },
   states: {
     hover: {
@@ -239,7 +239,7 @@ export const pieChartOptions = {
     },
   },
   fill: {
-    colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+    colors: ["#0be646", "#fc0335", "#d3e60b","#e60b3b"],
   },
   tooltip: {
     enabled: true,
@@ -247,19 +247,25 @@ export const pieChartOptions = {
   },
 };
 
-export const pieChartData = [63, 25, 12];
+export const pieChartData = [60, 20, 10,10];
 
 // Total Spent Default
 
 export const lineChartDataTotalSpent = [
   {
-    name: "Revenue",
+    name: "Miss",
     data: [50, 64, 48, 66, 49, 68],
   },
   {
-    name: "Profit",
+    name: "Completed",
     data: [30, 40, 24, 46, 20, 46],
   },
+  {
+    name: "Cancel",
+    data: [30, 40, 24, 46, 20, 46],
+  },
+
+
 ];
 
 export const lineChartOptionsTotalSpent = {
@@ -276,7 +282,7 @@ export const lineChartOptionsTotalSpent = {
       color: "#4318FF",
     },
   },
-  colors: ["#4318FF", "#39B8FF"],
+  colors: ["#4318FF", "#39B8FF","#fc0335"],
   markers: {
     size: 0,
     colors: "white",
@@ -287,7 +293,7 @@ export const lineChartOptionsTotalSpent = {
     fillOpacity: 1,
     discrete: [],
     shape: "circle",
-    radius: 2,
+    radius: 1,
     offsetX: 0,
     offsetY: 0,
     showNullDataPoints: true,
@@ -328,9 +334,9 @@ export const lineChartOptionsTotalSpent = {
   grid: {
     show: false,
     column: {
-      color: ["#7551FF", "#39B8FF"],
+      color: ["#7551FF", "#39B8FF","#fc0335"],
       opacity: 0.5,
     },
   },
-  color: ["#7551FF", "#39B8FF"],
+  color: ["#7551FF", "#39B8FF","#fc0335"],
 };

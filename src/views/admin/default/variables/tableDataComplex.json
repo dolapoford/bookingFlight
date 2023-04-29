@@ -1,25 +1,25 @@
 [
   {
-    "name":"Horizon UI PRO",
-    "status": "Approved",
+    "name":"Tour",
+    "status": "Completed",
     "date": "18 Apr 2022",
     "progress": 75.5  
   },
   {
-    "name":"Horizon UI Free",
-    "status": "Disable",
+    "name":"Flight",
+    "status": "Miss",
     "date": "18 Apr 2022",
     "progress": 25.5  
   },
   {
-    "name":"Marketplace",
-    "status": "Error",
+    "name":"Tour",
+    "status": "Cancel",
     "date": "20 May 2021",
     "progress": 90  
   },
   {
-    "name":"Weekly Updates",
-    "status": "Approved",
+    "name":"Flight",
+    "status": "Reschedule",
     "date": "12 Jul 2021",
     "progress": 50.5  
   }

@@ -2,6 +2,7 @@ import {
   Flex,
   Table,
   Progress,
+  Button,
   Icon,
   Tbody,
   Td,
@@ -65,7 +66,7 @@ export default function ColumnsTable(props) {
           fontSize='22px'
           fontWeight='700'
           lineHeight='100%'>
-          Complex Table
+        Booking Data
         </Text>
         <Menu />
       </Flex>
@@ -144,13 +145,18 @@ export default function ColumnsTable(props) {
                   } else if (cell.column.Header === "PROGRESS") {
                     data = (
                       <Flex align='center'>
-                        <Progress
+                        {/* <Progress
                           variant='table'
                           colorScheme='brandScheme'
                           h='8px'
                           w='108px'
                           value={cell.value}
-                        />
+                        /> */}
+
+                  <Button colorScheme='teal' variant='outline'>
+                    {cell.value}
+                 </Button>
+
                       </Flex>
                     );
                   }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 import { Icon } from "@chakra-ui/react";
 import {
@@ -7,6 +7,7 @@ import {
   MdHome,
   MdLock,
   MdOutlineShoppingCart,
+  MdExitToApp,
 } from "react-icons/md";
 
 // Admin Imports
@@ -16,8 +17,12 @@ import Profile from "views/admin/profile";
 import DataTables from "views/admin/dataTables";
 import RTL from "views/admin/rtl";
 
-// Auth Imports
+// Auth Imports 
 import SignInCentered from "views/auth/signIn";
+
+//Main Imports
+import LandingPage from "components/landingpage/LandingPage";
+import Booking from "views/booking/index"
 
 const routes = [
   {
@@ -28,7 +33,7 @@ const routes = [
     component: MainDashboard,
   },
   {
-    name: "NFT Marketplace",
+    name: "Booking",
     layout: "/admin",
     path: "/nft-marketplace",
     icon: (
@@ -39,8 +44,12 @@ const routes = [
         color='inherit'
       />
     ),
+
+
     component: NFTMarketplace,
     secondary: true,
+
+    
   },
   {
     name: "Data Tables",
@@ -70,6 +79,28 @@ const routes = [
     icon: <Icon as={MdHome} width='20px' height='20px' color='inherit' />,
     component: RTL,
   },
+  {
+    name: "Logout",
+    layout:"/auth",
+    path:"/landing",
+    icon: <Icon as={MdExitToApp} width='20px' height='20px' color='inherit' />,
+    component:LandingPage,
+  },
+
+
+  {
+    layout:"/main",
+    path: "/landing",
+    component:LandingPage,
+
+  },
+  {
+    layout:"/main",
+    path: "/booking",
+    component:Booking
+  }
 ];
+
+
 
 export default routes;
